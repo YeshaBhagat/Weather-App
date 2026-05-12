@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell weather-clear" id="appShell">
+    <section class="weather-panel" aria-labelledby="appTitle">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">OpenWeatherMap API</p>
+          <h1 id="appTitle">Weather Application</h1>
+        </div>
+        <div class="status-pill" id="statusPill">Ready</div>
+      </div>
+
+      <form class="search-form" id="weatherForm">
+        <label class="input-group city-field">
+          <span>City Name</span>
+          <input
+            type="text"
+            id="cityInput"
+            autocomplete="address-level2"
+            placeholder="Search city, e.g. Mumbai"
+            required
+          >
+        </label>
+
+        <button class="search-button" type="submit">
+          <span class="button-icon" aria-hidden="true">⌕</span>
+          <span id="buttonText">Search</span>
+        </button>
+      </form>
+
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <section class="weather-card" id="weatherCard" hidden>
+        <div class="current-weather">
+          <div>
+            <p class="location" id="cityName">--</p>
+            <p class="condition" id="weatherCondition">--</p>
+          </div>
+          <img class="weather-icon" id="weatherIcon" src="" alt="">
+        </div>
+
+        <div class="temperature-row">
+          <p class="temperature" id="temperature">--°C</p>
+          <p class="feels-like" id="feelsLike">Feels like --°C</p>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-item">
+            <span class="detail-label">Humidity</span>
+            <strong id="humidity">--%</strong>
+          </article>
+          <article class="detail-item">
+            <span class="detail-label">Wind Speed</span>
+            <strong id="windSpeed">-- m/s</strong>
+          </article>
+          <article class="detail-item">
+            <span class="detail-label">Pressure</span>
+            <strong id="pressure">-- hPa</strong>
+          </article>
+          <article class="detail-item">
+            <span class="detail-label">Visibility</span>
+            <strong id="visibility">-- km</strong>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
